@@ -39,6 +39,7 @@ jobs:
 
       - name: Publish coverage results
         if: always()
+        continue-on-error: true
         uses: aGallea/tests-coverage-report@v1
         with:
           cobertura-path:
