@@ -25,5 +25,5 @@ class RecipeRating(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ("recipe", "user")
+        unique_together = ("recipes", "user")
         ordering = ["-created_at"]

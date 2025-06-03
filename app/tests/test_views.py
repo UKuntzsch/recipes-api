@@ -11,7 +11,7 @@ def api_client():
 
 @pytest.mark.django_db
 def test_recipe_list(api_client):
-    url = reverse("recipe-list")
+    url = reverse("recipes-list")
     response = api_client.get(url)
     assert response.status_code == status.HTTP_200_OK
     assert isinstance(response.data, list)

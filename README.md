@@ -13,7 +13,7 @@
 ```bash
 # Clone the repo
 git clone https://github.com/your-org/recipe-api.git
-cd recipe-api
+cd recipes-api
 
 # Install dependencies and activate environment
 poetry install
