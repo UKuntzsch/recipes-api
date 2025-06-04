@@ -1,4 +1,3 @@
-# my change on serializers
 from rest_framework import serializers
 from .models import Recipe, RecipeRating
 
