@@ -20,16 +20,13 @@ jobs:
           python-version: '3.13'
 
       - name: Install Poetry
-        run:
-          pip install poetry
+        run: pip install poetry
 
       - name: Install dependencies
-        run: |
-          poetry install --no-root
+        run: poetry install --no-root
 
-      - name : Run migrations
-        run: |
-          poetry run python manage.py migrate --noinput
+      - name: Run migrations
+        run: poetry run python manage.py migrate --noinput
 
       - name: Run pytest with coverage
         continue-on-error: true
@@ -39,11 +36,8 @@ jobs:
 
       - name: Publish coverage results
         if: always()
-        continue-on-error: true
         uses: aGallea/tests-coverage-report@v1
         with:
-          cobertura-path:
-            coverage.xml
-          junit-path:
-            pytest.xml
+          cobertura-path: coverage.xml
+          junit-path: pytest.xml
           show-diffcover: 'true'
